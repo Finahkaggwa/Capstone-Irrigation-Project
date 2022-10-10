@@ -1,0 +1,183 @@
+body {
+    background-color: #ccd5ae;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Weather{
+    flex: 1;
+    border: 1px solid #d4a373;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 00.5em;
+}
+
+.Irrigate_status{
+    flex: 1;
+    border: 1px solid #d4a373;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 00.5em;
+}
+
+.Crops {
+    flex: 1;
+    border: 1px solid #d4a373;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 00.5em;
+}
+
+.History {
+    flex: 1;
+    border: 1px solid #d4a373;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 00.5em;
+}
+
+.Sign_In {
+    flex: 1;
+    border: 1px solid #d4a373;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 00.5em;
+}
+
+.Footer {
+    border: 1px solid #d4a373;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 00.5em;
+}
+
+.foot_icon {
+    padding: 0.5em 0.5em 0.5em 0.5em;
+
+}
+
+.We_Irrigate {
+    display: flex;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+.message {
+    background-color: #fefae0;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.click {
+    background-color: #faedcd;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    border: 1px solid #0000006c;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.click2 {
+    background-color: #faedcd;
+   border: 1px solid #0000006c;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    margin-bottom: 2em;
+}
+
+.intext>label {
+    display: inline-block;
+    width: 12em;
+    padding: 0.5em;
+    font-weight: bold;
+}
+
+.intext>input[type="text"] {
+    padding: 0.5em;
+    margin: 0.5em;
+    margin-right: 1.5em;
+}
+
+.intext2>label {
+    display: inline-block;
+    width: 12em;
+    padding: 0.5em;
+    font-weight: bold;
+}
+
+.intext2>input[type="text"] {
+    padding: 0.5em;
+    margin: 0.5em;
+    margin-right: 1.5em;
+    width: 21em;
+}
+
+.airtime>label {
+    display: inline-block;
+    width: 16em;
+    padding: 0.5em;
+    font-weight: bold;
+}
+
+.airtime>input[type="text"] {
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+.widgets {
+    display: flex;
+}
+
+.Irrigation_mode {
+    flex: 1;
+    border: 1px solid #d4a373;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 00.5em;
+}
+
+.widgets2 {
+    display: flex;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+.px-5 {
+    
+}
