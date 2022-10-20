@@ -56,6 +56,9 @@ app.get('/api/records_table', async function (req, res) {
 app.post('/api/predicted_results', async function (req, res) {
     const { irrigationStatus } = req.body
     console.log(irrigationStatus)
+    res.json({
+        results: irrigationStatus
+    });
 
     // logic goes here
     const waterBeans = db.all('SELECT * FROM Irrigation_table WHERE Crop_type = Beans')

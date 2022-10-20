@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="weatherApp.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+        integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="widgets2"style="color: #eef6f1" >
+
+        <div class="Irrigation_mode">
+
+            <h2>Irrigation Schedules</h2>
+
+            <div class="We_Irrigate">
+
+                <div class="Weather" style="  background-image: url('images/Slide1.JPG'); 
+                background-repeat: no-repeat;
+                background-size: cover;">
+                    <h3> Forecast</h3>
+
+                    <ul>
+                        <li x-text="currentWeather.status"></li>
+                        <li x-text="currentWeather.temperature"></li>
+                        <li x-text="currentWeather.currentTime"></li>
+                    </ul>
+                    <p x-text="currentWeather.Rainfall"></p>
+
+                </div>
+
+                <div class="Irrigate_status" style="background-image: url('images/grow.jpg'); 
+                background-repeat: no-repeat;
+                background-size: cover;">
+                    <div class="Crops" x-data="{
+
+                    }">
+                       <h2>Crop type</h2>
+                       
+                       <form action="crops">
+                           <select name="Selecet Crop" id="Crop">
+                              <optgroup> label=<first-choice></first-choice>
+                               <option value="javascript">Select a Crop</option>
+                               <option value="Beans">Beans</option>
+                               <option value="Chilli">Chilli</option>
+                               <option value="Potato">Potato</option>
+                              </optgroup> 
+                           </select>
+                       </form> <br>
+       
+                       <div class="message" x-text="selectedCrop"></div>
+       
+                   </div>
+                    <div class="intext">
+                        <div class="Crops">
+                        <span>
+                          <label for="name">Irrigation Status:</label>  
+                        </span>
+                        
+                        <span x-text="irrigatePredict"></span>
+
+                        <button x-on:click=" irrigatingstatus">predict</button>
+                    </div>
+
+                    <!-- <div class="intext">
+                        <label for="name">Moisture Content:</label>
+                    </div> -->
+                </div>
+                </div>
+
+            </div>
+
+        </div>
+</body>
+</html>

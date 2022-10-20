@@ -1,11 +1,11 @@
 body {
-    background-color: #ccd5ae;
+    background-color: #cbda81;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .Weather{
     flex: 1;
-    border: 1px solid #d4a373;
+    border: 1px solid #04AA6D;
     margin: 1em;
     padding: 1em;
     border-radius: 00.5em;
@@ -13,7 +13,7 @@ body {
 
 .Irrigate_status{
     flex: 1;
-    border: 1px solid #d4a373;
+    border: 1px solid #04AA6D;
     margin: 1em;
     padding: 1em;
     border-radius: 00.5em;
@@ -21,7 +21,7 @@ body {
 
 .Crops {
     flex: 1;
-    border: 1px solid #d4a373;
+    border: 1px solid #04AA6D;
     margin: 1em;
     padding: 1em;
     border-radius: 00.5em;
@@ -29,7 +29,7 @@ body {
 
 .History {
     flex: 1;
-    border: 1px solid #d4a373;
+    border: 1px solid #04AA6D;
     margin: 1em;
     padding: 1em;
     border-radius: 00.5em;
@@ -37,14 +37,14 @@ body {
 
 .Sign_In {
     flex: 1;
-    border: 1px solid #d4a373;
+    border: 1px solid #04AA6D;
     margin: 1em;
     padding: 1em;
     border-radius: 00.5em;
 }
 
 .Footer {
-    border: 1px solid #d4a373;
+    border: 1px solid #04AA6D;
     margin: 1em;
     padding: 1em;
     border-radius: 00.5em;
@@ -65,7 +65,7 @@ h1 {
 
 
 .message {
-    background-color: #fefae0;
+    background-color:#04AA6D;
     padding: 1em;
     margin-bottom: 1em;
 }
@@ -132,7 +132,7 @@ h1 {
 
 .Irrigation_mode {
     flex: 1;
-    border: 1px solid #d4a373;
+    border: 1px solid #04AA6D;
     margin: 1em;
     padding: 1em;
     border-radius: 00.5em;
