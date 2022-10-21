@@ -44,17 +44,19 @@
 
              }">
                 <h2>Crop type</h2>
-                
-                <form action="crops">
-                    <select name="Selecet Crop" id="Crop">
-                       <optgroup> label=<first-choice></first-choice>
-                        <option value="javascript">Select a Crop</option>
-                        <option x-on:click="Beans = 1" value="1">Beans</option>
-                        <option x-model="Chilli" value="2">Chilli</option>
-                        <option x-model="Potato" value="3">Potato</option>
-                       </optgroup> 
-                    </select>
-                </form> <br>
+                <p><strong>Select Crop:</strong></p>
+                <form>
+                    <input type="radio" id="Beans" name="selection" value="1" x-on:click="Beans()"  x-model="typecrops">
+                    <label for="Beans">Beans</label><br>
+                    <input type="radio" id="chilli" name="selection" value="2" x-on:click="Chilli()" x-model="typecrops">
+                    <label for="Chilli">Chilli</label><br>
+                    <input type="radio" id="Potato" name="selection" value="3" x-on:click="Potato()" x-model="typecrops">
+                    <label for="Potato">Potato</label><br><br>
+                </form>
+
+
+                <strong>Soil Moisture </strong><span></span>
+                <input type="text" x-model="moisture">
 
                 <div class="message" x-text="selectedCrop"></div>
 
@@ -84,12 +86,16 @@
                     <div class="Irrigate_status">
                         <div class="intext">
                             <span>
-                              <label for="name">Irrigation Status:</label>  
+                                <label for="name">Irrigation Status:
+                                    <strong x-text="predictions"></strong>
+                                </label>
                             </span>
-                            
-                            <span x-text="irrigatePredict"></span>
+                            <!-- <input type="text" x-model="statusMessage"> -->
 
-                            <button x-on:click=" irrigatingstatus">predict</button>
+                            <!-- <span x-text="irrigatePredict"></span> -->
+
+                            <button x-on:click="irrigatingstatus()">predict</button>
+
                         </div>
 
                         <div class="intext">
@@ -177,15 +183,15 @@
 
         <div>
             <span class="foot_icon">
-             <img src="facebook.png" alt="" width="50">   
-            </span> 
-
-            <span class="foot_icon">
-             <img src="Instagram.jpg" alt="" width="60">   
+                <img src="facebook.png" alt="" width="50">
             </span>
 
             <span class="foot_icon">
-             <img src="twitter.png" alt="" width="50">   
+                <img src="Instagram.jpg" alt="" width="60">
+            </span>
+
+            <span class="foot_icon">
+                <img src="twitter.png" alt="" width="50">
             </span>
 
         </div> <br> <br>

@@ -12,9 +12,10 @@ document.addEventListener('alpine:init', () => {
             recordsMessage: '',
             open: false,
             crops: false,
-            Beans: 0,
-            Chilli:0,
-            Potato: 0,
+            // Beans: 0,
+            // Chilli:0,
+            // Potato: 0,
+            
             
                  init() {
                 axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=${this.api_key}`)
@@ -45,6 +46,7 @@ document.addEventListener('alpine:init', () => {
             RecordsHistory() {
                 this.open = !this.open
             },
+            
             // sendIrrigationStatus(status) {
             //     axios.post('/api/predicted_results', { irrigationStatus: }).then(res => {
 
@@ -74,13 +76,28 @@ document.addEventListener('alpine:init', () => {
             //             console.log(response);
             //         });
             // },
+            moisture:'',
+            typecrops: '',
+            
+            Beans(){
+                this.typecrops = 1
+            },
+            
+            Chilli(){
+                this.typecrops = 2
+            },
 
-
+            Potato(){
+                this.typecrops = 3
+            },
+            irrigatePredict: "",
+            predictions: "eeeeeeee",
+            
             irrigatingstatus() {
-                console.log(this.Beans);
+                // console.log(this.Beans);
                 let bodyFormData = new FormData();
-                bodyFormData.append('Type',3);
-                bodyFormData.append('Moisture', 47);
+                bodyFormData.append('Type',this.typecrops);
+                bodyFormData.append('Moisture', this.moisture);
 
                 axios({
                     method: "post",
@@ -90,15 +107,16 @@ document.addEventListener('alpine:init', () => {
                 })
                     .then(function (response) {
                         //handle success
-                        console.log(response);
+                        this.predictions = response.data.predictions;
+                        // console.log(response.data.predictions);
                         // this.sendIrrigationStatus(response.data.predictions)
                         axios.post('/api/predicted_results', { irrigationStatus:response.data.predictions }).then(res => {
-
+                            console.log(response.data.predictions);
                         });
                     })
                     .catch(function (response) {
                         //handle error
-                        console.log(response);
+                        // console.log(response);
                     });
             },
 

@@ -61,14 +61,14 @@ app.post('/api/predicted_results', async function (req, res) {
     });
 
     // logic goes here
-    const waterBeans = db.all('SELECT * FROM Irrigation_table WHERE Crop_type = Beans')
-    res.json({
-        results: irrigationStatus
-    });
+    // const waterBeans = db.all('SELECT * FROM Irrigation_table WHERE Crop_type = Beans')
+    // res.json({
+    //     results: irrigationStatus
+    // });
 
-    res.json({
-        results : modelFunction(cropList, irrigationStatus)
-    })
+    // res.json({
+    //     results : modelFunction(cropList, irrigationStatus)
+    // })
 
 });
 
