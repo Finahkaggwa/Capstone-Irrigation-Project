@@ -46,11 +46,13 @@
                 <h2>Crop type</h2>
                 <p><strong>Select Crop:</strong></p>
                 <form>
-                    <input type="radio" id="Beans" name="selection" value="1" x-on:click="Beans()"  x-model="typecrops">
+                    <input type="radio" id="Beans" name="selection" value="1" x-on:click="Beans()" x-model="typecrops">
                     <label for="Beans">Beans</label><br>
-                    <input type="radio" id="chilli" name="selection" value="2" x-on:click="Chilli()" x-model="typecrops">
+                    <input type="radio" id="chilli" name="selection" value="2" x-on:click="Chilli()"
+                        x-model="typecrops">
                     <label for="Chilli">Chilli</label><br>
-                    <input type="radio" id="Potato" name="selection" value="3" x-on:click="Potato()" x-model="typecrops">
+                    <input type="radio" id="Potato" name="selection" value="3" x-on:click="Potato()"
+                        x-model="typecrops">
                     <label for="Potato">Potato</label><br><br>
                 </form>
 
@@ -84,6 +86,21 @@
                     </div>
 
                     <div class="Irrigate_status">
+                        <h3> Irrigation Report</h3>
+
+                        <div class="intext">
+                            <!-- <label for="name">Moisture Content:</label> -->
+                            <span>
+                                <label for="name">Soil Moisture level:
+                                    <strong x-text="moisture"></strong>
+                                </label>
+                            </span>
+                        </div>
+
+                        <span>
+                          <button x-on:click="irrigatingstatus()">predict</button>  
+                        </span>
+
                         <div class="intext">
                             <span>
                                 <label for="name">Irrigation Status:
@@ -93,14 +110,9 @@
                             <!-- <input type="text" x-model="statusMessage"> -->
 
                             <!-- <span x-text="irrigatePredict"></span> -->
-
-                            <button x-on:click="irrigatingstatus()">predict</button>
-
+                            
                         </div>
 
-                        <div class="intext">
-                            <label for="name">Moisture Content:</label>
-                        </div>
                     </div>
 
                 </div>
