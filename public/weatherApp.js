@@ -8,7 +8,7 @@ document.addEventListener('alpine:init', () => {
             lat: 44.34,
             lon: 10.99,
             irrigation_history: [],
-            selectedCrop: 'eee',
+            selectedCrop: '',
             recordsMessage: '',
             open: false,
             crops: false,
@@ -36,7 +36,9 @@ document.addEventListener('alpine:init', () => {
             },
 
             RecordsHistory() {
+                // console.log(alert('Irrigation history'));
                 this.open = !this.open
+                   
             },
             
             // sendIrrigationStatus(status) {
@@ -102,8 +104,6 @@ document.addEventListener('alpine:init', () => {
                     headers: { "Content-Type": "multipart/form-data" },
                 })
                     .then((response) => {
-                        //handle success
-                        
                         // console.log(response.data.predictions);
                         // this.sendIrrigationStatus(response.data.predictions)
                         axios.post('/api/predicted_results', { irrigationStatus:response.data.predictions }).then(res => {
@@ -116,11 +116,7 @@ document.addEventListener('alpine:init', () => {
                         // console.log(response);
                     });
             },
-
-
-
-
-
+            
         }
 
     });

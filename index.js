@@ -48,7 +48,7 @@ app.get('/api/irrigation/history', async (request, response) => {
 app.get('/api/records_table', async function (req, res) {
     const Records_table = await db.all(`select * from Records_table`);
     res.json({
-        Records_table,
+        results: Records_table,
         //  "Message": "Am trying.."
     })
 });
@@ -59,16 +59,6 @@ app.post('/api/predicted_results', async function (req, res) {
     res.json({
         results: irrigationStatus
     });
-
-    // logic goes here
-    // const waterBeans = db.all('SELECT * FROM Irrigation_table WHERE Crop_type = Beans')
-    // res.json({
-    //     results: irrigationStatus
-    // });
-
-    // res.json({
-    //     results : modelFunction(cropList, irrigationStatus)
-    // })
 
 });
 

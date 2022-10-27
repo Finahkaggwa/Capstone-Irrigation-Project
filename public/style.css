@@ -20,7 +20,7 @@ body {
 }
 
 .Crops {
-    flex: 1;
+    flex: 2;
     border: 1px solid #04AA6D;
     margin: 1em;
     padding: 1em;
@@ -131,12 +131,21 @@ h1 {
 }
 
 .Irrigation_mode {
-    flex: 1;
+    /* flex: 1; */
     border: 1px solid #04AA6D;
     margin: 1em;
     padding: 1em;
     border-radius: 00.5em;
 }
+.Irrigate_Info{
+    border: 1px solid #04AA6D;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 00.5em;
+    flex: 1;
+}
+
+
 
 .widgets2 {
     display: flex;
@@ -301,4 +310,14 @@ button:hover {
   .cancelbtn, .signupbtn {
     width: 100%;
   }
+}
+.header {
+    background-image: url("images/grow.jpg");
+    padding: 1em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

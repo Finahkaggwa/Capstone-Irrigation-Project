@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="weatherApp.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+        integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div x-data="weatherAPIWidget">
+        <div class="Irrigation_schedule">
+
+            <div class="Irrigation_mode" style="color: #eef6f1">
+                <!-- <h1 style="color: #04AA6D"> AgriTech Stimulus Pty Ltd</h1> -->
+
+                <div class="header">
+                    <h1 style="color: #eef6f1"> AgriTech Stimulus Pty Ltd</h1>
+                    <!-- <h4 style="color: #eef6f1">welcome</h4> -->
+            
+                </div>
+
+                <h2 style="color: #04AA6D">Irrigation Schedules</h2>
+
+                <div class="switch enable">
+                    <center>
+                        <h1>Manual Button</h1>
+                        <b>switch</b>
+                        <br><br>
+                        <input type="checkbox" id="switch" class="checkbox" />
+                        <label for="switch" class="toggle">
+
+                            <p>OFF ON</p>
+
+                        </label>
+                    </center>
+                </div>
+
+                <div class="widgets">
+                    <div class="Crops" style="background-image: url('images/grow.jpg'); 
+                    background-repeat: no-repeat;
+                    background-size: cover;">
+                        <h2>Crop type</h2>
+                        <p><strong>Select Crop:</strong></p>
+                        <form>
+                            <input type="radio" id="Beans" name="selection" value="1" x-on:click="Beans()"
+                                x-model="typecrops">
+                            <label for="Beans">Beans</label><br>
+                            <input type="radio" id="chilli" name="selection" value="2" x-on:click="Chilli()"
+                                x-model="typecrops">
+                            <label for="Chilli">Chilli</label><br>
+                            <input type="radio" id="Potato" name="selection" value="3" x-on:click="Potato()"
+                                x-model="typecrops">
+                            <label for="Potato">Potato</label><br><br>
+                        </form>
+
+                        <strong>Soil Moisture </strong><span></span>
+                        <input type="text" x-model="moisture">
+
+                        <div class="message" x-text="selectedCrop"></div>
+
+                    </div>
+
+                    <div class="Irrigate_Info" style="background-image: url('images/grow.jpg'); 
+                    background-repeat: no-repeat;
+                    background-size: cover;">
+                        <h3> Irrigation Report </h3>
+
+                        <div class="We_Irrigate">
+                            <span>
+                                <label for="name">Soil Moisture level:
+                                    <strong x-text="moisture"></strong>
+                                </label>
+                            </span>
+                        </div>
+
+                        <span>
+                            <button x-on:click="irrigatingstatus()">predict</button>
+                        </span>
+
+                        <div class="intext">
+                            <span>
+                                <label for="name">Irrigation Status:
+                                    <strong x-text="predictions"></strong>
+                                </label>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="widgets2">
+
+            <div class="Weather" style="  background-image: url('images/Slide1.JPG'); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #eef6f1">
+                <h3> Forecast</h3>
+
+                <ul>
+                    <li x-text="currentWeather.status"></li>
+                    <li x-text="currentWeather.temperature"></li>
+                    <li x-text="currentWeather.currentTime"></li>
+                </ul>
+                <p x-text="currentWeather.Rainfall"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <span class="foot_icon">
+        <a href="http://127.0.0.1:5501/public/history.html"
+            class="text-base leading-6 text-gray-500 hover:text-gray-900" style="color: #04AA6D; text-align: center;">
+            Irrigation History
+        </a>
+    </span>
+
+
+
+
+
+
+    </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

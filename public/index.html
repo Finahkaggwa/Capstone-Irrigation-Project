@@ -5,190 +5,111 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
     <script src="weatherApp.js"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
         integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
-    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
 </head>
 
 <body>
-    <div x-data="weatherAPIWidget">
 
-        <h1>AgriTech Stimulus Pty Ltd</h1>
-        <h4>welcome</h4>
-
-        <div class="widgets">
-
-            <div class="Sign_In">
-                <h2>Login Details </h2>
-
-                <div class="intext2">
-                    <label for="longestWord">Username:</label>
-                    <input type="text" id="longestWord" placeholder="farmer">
-                </div>
-
-                <div class="intext2">
-                    <label for="shortestWord">Password:</label>
-                    <input type="text" id="longestWord">
-                </div>
-                <div><button class="click">Login</button>
-                </div>
-            </div>
-
-            <div class="Crops" x-data="{
-
-             }">
-                <h2>Crop type</h2>
-                <p><strong>Select Crop:</strong></p>
-                <form>
-                    <input type="radio" id="Beans" name="selection" value="1" x-on:click="Beans()" x-model="typecrops">
-                    <label for="Beans">Beans</label><br>
-                    <input type="radio" id="chilli" name="selection" value="2" x-on:click="Chilli()"
-                        x-model="typecrops">
-                    <label for="Chilli">Chilli</label><br>
-                    <input type="radio" id="Potato" name="selection" value="3" x-on:click="Potato()"
-                        x-model="typecrops">
-                    <label for="Potato">Potato</label><br><br>
-                </form>
-
-
-                <strong>Soil Moisture </strong><span></span>
-                <input type="text" x-model="moisture">
-
-                <div class="message" x-text="selectedCrop"></div>
-
-            </div>
-        </div>
-
-        <div class="widgets2">
-
-            <div class="Irrigation_mode">
-
-                <h2>Irrigation Schedules</h2>
-
-                <div class="We_Irrigate">
-
-                    <div class="Weather">
-                        <h3> Forecast</h3>
-
-                        <ul>
-                            <li x-text="currentWeather.status"></li>
-                            <li x-text="currentWeather.temperature"></li>
-                            <li x-text="currentWeather.currentTime"></li>
-                        </ul>
-                        <p x-text="currentWeather.Rainfall"></p>
-
-                    </div>
-
-                    <div class="Irrigate_status">
-                        <h3> Irrigation Report</h3>
-
-                        <div class="intext">
-                            <!-- <label for="name">Moisture Content:</label> -->
-                            <span>
-                                <label for="name">Soil Moisture level:
-                                    <strong x-text="moisture"></strong>
-                                </label>
-                            </span>
-                        </div>
-
-                        <span>
-                          <button x-on:click="irrigatingstatus()">predict</button>  
-                        </span>
-
-                        <div class="intext">
-                            <span>
-                                <label for="name">Irrigation Status:
-                                    <strong x-text="predictions"></strong>
-                                </label>
-                            </span>
-                            <!-- <input type="text" x-model="statusMessage"> -->
-
-                            <!-- <span x-text="irrigatePredict"></span> -->
-                            
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="History">
-
-                <h2>Irrigation History</h2>
-
-                <div>
-                    <button class="click" x-on:click="RecordsHistory()">Irrigation Records</button>
-                </div>
-
-                <!-- <div class="History">
-                    <textarea x-model="table" name="" id="" cols="30" rows="3"></textarea>
-                </div> -->
-
-                <div class="message" x-text="recordsMessage"></div>
-
-                <table x-show="open" class="styled-table">
-                    <thead>
-                        <tr>
-                            <th>CropType</th>
-                            <th>Date</th>
-                            <th>duration</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <template x-for="(item, index) in irrigation_history">
-                            <tr>
-                                <th x-text="item.Crop_type" scope="row">2</th>
-                                <td x-text="item.Date"></td>
-                                <td x-text="item.Irrigation_duration"></td>
-                            </tr>
-                        </template>
-                    </tbody>
-                </table>
-
-            </div>
-
-        </div>
+    <div class="header">
+        <h1 style="color: #eef6f1"> AgriTech Stimulus Pty Ltd</h1>
+        <!-- <h4 style="color: #eef6f1">welcome</h4> -->
 
     </div>
 
-    <div class="Footer">
+    <div class="form">
+        <!-- <form action="action_page.php" method="post">
+        <div class="imgcontainer">
+          <img src="images/Picture1.jpg" alt="" width="100">
+        </div>
+      
+        <div class="container">
+          <label style="color: #eef6f1" for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+      
+          <label style="color: #eef6f1" for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+      
+        
+          
+            <button type="submit" x-on:click="cropcontent.html"> Login</button>
+        
+          <label style="color: #eef6f1">
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+      
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form> -->
+        <div class="imgcontainer">
+            <img src="images/Picture1.jpg" alt="" width="100">
+        </div>
+
+        <div class="intext2" style="color: #eef6f1">
+            <label for="longestWord">Username:</label>
+            <input type="text" id="longestWord" placeholder="">
+        </div>
+
+        <div class="intext2" style="color: #eef6f1">
+            <label for="shortestWord">Password:</label>
+            <input type="text" id="longestWord">
+        </div>
+        <div>
+            <a href="homepage.html"><button>Login</button>
+            </a>
+        </div>
+        <label style="color: #eef6f1">
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </div>
+
+    
+    </div>
+    <div class="Footer" style="color: #eef6f1">
         <h3>Who We Are</h3>
 
+
         <span class="foot_icon">
-            <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <a href="signup.html" class="text-base leading-6 text-gray-500 hover:text-gray-900"
+                style="color: #eef6f1">
                 Sign Up
             </a>
             <!-- <button class="click" x-on:click="">Sign Up</button> -->
         </span>
 
         <span class="foot_icon">
-            <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900" style="color: #eef6f1">
                 About
             </a>
             <!-- <button class="click" x-on:click="">About Us</button> -->
         </span>
 
         <span class="foot_icon">
-            <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900" style="color: #eef6f1">
                 Pricing
             </a>
         </span>
 
         <span class="foot_icon">
-            <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900" style="color: #eef6f1">
                 Contact
             </a>
         </span>
 
         <span class="foot_icon">
-            <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900" style="color: #eef6f1">
                 Terms
             </a>
         </span> <br> <br>
@@ -209,11 +130,8 @@
         </div> <br> <br>
 
         <div class="bottom text-center text-gray-400">
-            © 2021 SomeCompany, Inc. All rights reserved.
+            © 2022 AgriTech Stimulus Pty Ltd. All rights reserved.
         </div>
-
-    </div>
-
 </body>
 
 </html>
