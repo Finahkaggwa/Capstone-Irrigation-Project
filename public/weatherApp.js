@@ -14,20 +14,23 @@ document.addEventListener('alpine:init', () => {
             crops: false,
                   
                  init() {
+                    this.RecordsHistory()
                 axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=${this.api_key}`)
                     .then(weatherApiResponse => {
                         console.log(weatherApiResponse.data);
                         this.currentWeather = {
                             status: weatherApiResponse.data.weather[0].description,
                             temperature: `${weatherApiResponse.data.main.temp} °F`,
+                            
                         }
+                        axios.get('/api/time')
+                        .then(timeApiResponse => {
+                            this.currentWeather.currentTime = timeApiResponse.data.currentDate
+                            console.log(this.currentWeather);
+                        })  
                     })
 
-                axios.get('/api/time')
-                    .then(timeApiResponse => {
-                        this.currentWeather.currentTime = timeApiResponse.data.currentDate
-                        console.log(this.currentWeather.currentTime);
-                    })
+           
 
             },
 
@@ -35,10 +38,16 @@ document.addEventListener('alpine:init', () => {
                 this.crops = !this.crops
             },
 
+            
+
             RecordsHistory() {
                 // console.log(alert('Irrigation history'));
-                this.open = !this.open
-                   
+                // this.open = !this.open
+                axios.get('/api/records_table')
+                .then((results) => {
+                    this.irrigation_history = results.data.Records_table;
+                    // console.log(this.irrigation_history.Records_table)
+                })
             },
             
             // sendIrrigationStatus(status) {

@@ -11,7 +11,7 @@
         </script>
     <link rel="stylesheet" href="style.css">
     <script src="weatherApp.js"></script>
-    <script src="index.js"></script>
+    <script src="../index.js"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
 
     <title>Document</title>
@@ -23,12 +23,12 @@
 
         <h2>Irrigation History</h2>
 
-        <div>
+        <!-- <div>
             <button class="click" x-on:click="RecordsHistory()">Irrigation Records</button>
-        </div>
+        </div> -->
 
 
-        <table x-show="open" class="styled-table">
+        <table class="styled-table">
             <thead>
                 <tr>
                     <th>CropType</th>
@@ -36,15 +36,16 @@
                     <th>duration</th>
                 </tr>
             </thead>
-            <tbody>
+    
                 <template x-for="(item, index) in irrigation_history">
-                    <tr>
-                        <th x-text="item.Crop_type"></th>
-                        <td x-text="item.Date"></td>
-                        <td x-text="item.Irrigation_duration"></td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <th x-text="item.Crop_type"></th>
+                            <td x-text="item.Date"></td>
+                            <td x-text="item.Irrigation_duration"></td>
+                        </tr>
+                    </tbody>
                 </template>
-            </tbody>
         </table>
 
     </div>

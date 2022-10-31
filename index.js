@@ -3,7 +3,7 @@ import sqlite3 from 'sqlite3';
 import express from 'express';
 import cors from 'cors';
 import moment from 'moment';
-import modelFunction from './modelFunction.js';
+// import modelFunction from './modelFunction.js';
 
 
 const app = express();
@@ -48,7 +48,8 @@ app.get('/api/irrigation/history', async (request, response) => {
 app.get('/api/records_table', async function (req, res) {
     const Records_table = await db.all(`select * from Records_table`);
     res.json({
-        results: Records_table,
+        Records_table,
+        
         //  "Message": "Am trying.."
     })
 });
